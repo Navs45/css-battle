@@ -15,6 +15,8 @@ It includes:
 * Home Page
 * About Page
 * Blog Page
+* Destinations Page
+* Contact Page
 
 ---
 
@@ -34,6 +36,8 @@ css-battle/
 ├── index.html
 ├── about.html
 ├── blog.html
+├── destinations.html
+├── contact.html
 ├── style.css
 ```
 
