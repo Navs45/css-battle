@@ -28,13 +28,18 @@ It includes:
 
 ## 📂 Folder Structure
 
+```bash
 css-battle/
 │
 ├── index.html
 ├── about.html
 ├── blog.html
 ├── style.css
- 🚀 How to Run
+```
+
+---
+
+## 🚀 How to Run
 
 1. Download all files
 2. Keep them in the same folder
