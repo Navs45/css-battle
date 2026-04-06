@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog – TripBee</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .blog-hero-bg {
+      background-image: url('https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=1600&q=85');
+    }
+
+    /* Blog Grid */
+    .blog-section { padding: 80px 60px; }
+    .blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 32px; max-width: 1100px; margin: 0 auto; }
+    @media(max-width:1024px){ .blog-grid { grid-template-columns:1fr 1fr; } }
+    @media(max-width:600px){ .blog-grid { grid-template-columns:1fr; } }
+
+    .blog-card { border-radius: var(--radius-lg); overflow: hidden; background: var(--white); box-shadow: var(--shadow-card); transition: transform var(--transition), box-shadow var(--transition); }
+    .blog-card:hover { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(107,33,168,0.18); }
+
+    .blog-img-wrap { position: relative; }
+    .blog-img-wrap img { width: 100%; height: 210px; object-fit: cover; display: block; }
+    .blog-tags { position: absolute; top: 12px; left: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .blog-tag { background: rgba(255,255,255,0.9); font-size: 0.75rem; padding: 3px 10px; border-radius: 20px; font-weight: 600; color: var(--text); backdrop-filter: blur(4px); }
+
+    .blog-body { padding: 18px; }
+    .blog-body h3 { font-weight: 700; font-size: 1rem; margin-bottom: 10px; line-height: 1.4; }
+    .blog-author { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .author-avatar { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; }
+    .author-info { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+    .author-name { font-size: 0.8rem; font-weight: 600; color: var(--purple); }
+    .blog-date { font-size: 0.78rem; color: var(--text-muted); }
+    .blog-shares { font-size: 0.78rem; color: var(--text-muted); }
+    .blog-excerpt { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; }
+    .view-post { font-size: 0.875rem; font-weight: 600; color: var(--purple); display: inline-flex; align-items: center; gap: 6px; }
+    .view-post:hover { color: var(--purple-dark); }
+
+    /* Top Destinations */
+    .top-dest { padding: 80px 60px; background: var(--off-white); }
+    .top-dest-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; max-width: 1100px; margin: 0 auto; }
+    @media(max-width:1024px){ .top-dest-grid { grid-template-columns:1fr 1fr; } }
+    @media(max-width:600px){ .top-dest-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">TripBee</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="#">Destinations</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="#" class="btn-contact">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg blog-hero-bg"></div>
+    <div class="hero-content">
+      <h1>Inspiration For Travel<br>By Real People</h1>
+      <p>Book Smart, Travel Simple.</p>
+    </div>
+  </section>
+
+  <!-- BLOG GRID -->
+  <section class="blog-section">
+    <div class="blog-grid">
+
+      <!-- Post 1 -->
+      <div class="blog-card">
+        <div class="blog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?w=600&q=80" alt="Blog Post">
+          <div class="blog-tags"><span class="blog-tag">Aenean Eleifend</span><span class="blog-tag">Aliquam</span></div>
+        </div>
+        <div class="blog-body">
+          <h3>Integer Maecenas Eget Viverra</h3>
+          <div class="blog-author">
+            <img class="author-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Joanna">
+            <div class="author-info">
+              <span class="author-name">Joanna</span>
+              <span class="blog-date">June 29, 2018</span>
+              <span class="blog-shares">+M shares</span>
+            </div>
+          </div>
+          <p class="blog-excerpt">Aenean eleifend ante maecenas pulvinar nisl. Vestibulum in elit lorem at dolor praesent dones dorfum. Vel consequat justo enim.</p>
+          <a href="#" class="view-post">View Post &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Post 2 -->
+      <div class="blog-card">
+        <div class="blog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80" alt="Blog Post">
+          <div class="blog-tags"><span class="blog-tag">Aenean Eleifend</span><span class="blog-tag">Aliquam</span></div>
+        </div>
+        <div class="blog-body">
+          <h3>Integer Maecenas Eget Viverra</h3>
+          <div class="blog-author">
+            <img class="author-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Joanna">
+            <div class="author-info">
+              <span class="author-name">Joanna</span>
+              <span class="blog-date">June 29, 2018</span>
+              <span class="blog-shares">+M shares</span>
+            </div>
+          </div>
+          <p class="blog-excerpt">Aenean eleifend ante maecenas pulvinar nisl. Vestibulum in elit lorem at dolor praesent dones dorfum. Vel consequat justo enim.</p>
+          <a href="#" class="view-post">View Post &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Post 3 -->
+      <div class="blog-card">
+        <div class="blog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=600&q=80" alt="Blog Post">
+          <div class="blog-tags"><span class="blog-tag">Aenean Eleifend</span><span class="blog-tag">Aliquam</span></div>
+        </div>
+        <div class="blog-body">
+          <h3>Integer Maecenas Eget Viverra</h3>
+          <div class="blog-author">
+            <img class="author-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Joanna">
+            <div class="author-info">
+              <span class="author-name">Joanna</span>
+              <span class="blog-date">June 29, 2018</span>
+              <span class="blog-shares">+M shares</span>
+            </div>
+          </div>
+          <p class="blog-excerpt">Aenean eleifend ante maecenas pulvinar nisl. Vestibulum in elit lorem at dolor praesent dones dorfum. Vel consequat justo enim.</p>
+          <a href="#" class="view-post">View Post &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Post 4 -->
+      <div class="blog-card">
+        <div class="blog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=600&q=80" alt="Blog Post">
+          <div class="blog-tags"><span class="blog-tag">Aenean Eleifend</span><span class="blog-tag">Aliquam</span></div>
+        </div>
+        <div class="blog-body">
+          <h3>Integer Maecenas Eget Viverra</h3>
+          <div class="blog-author">
+            <img class="author-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Joanna">
+            <div class="author-info">
+              <span class="author-name">Joanna</span>
+              <span class="blog-date">June 29, 2018</span>
+              <span class="blog-shares">+M shares</span>
+            </div>
+          </div>
+          <p class="blog-excerpt">Aenean eleifend ante maecenas pulvinar nisl. Vestibulum in elit lorem at dolor praesent dones dorfum. Vel consequat justo enim.</p>
+          <a href="#" class="view-post">View Post &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Post 5 -->
+      <div class="blog-card">
+        <div class="blog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80" alt="Blog Post">
+          <div class="blog-tags"><span class="blog-tag">Aenean Eleifend</span><span class="blog-tag">Aliquam</span></div>
+        </div>
+        <div class="blog-body">
+          <h3>Integer Maecenas Eget Viverra</h3>
+          <div class="blog-author">
+            <img class="author-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Joanna">
+            <div class="author-info">
+              <span class="author-name">Joanna</span>
+              <span class="blog-date">June 29, 2018</span>
+              <span class="blog-shares">+M shares</span>
+            </div>
+          </div>
+          <p class="blog-excerpt">Aenean eleifend ante maecenas pulvinar nisl. Vestibulum in elit lorem at dolor praesent dones dorfum. Vel consequat justo enim.</p>
+          <a href="#" class="view-post">View Post &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Post 6 -->
+      <div class="blog-card">
+        <div class="blog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&q=80" alt="Blog Post">
+          <div class="blog-tags"><span class="blog-tag">Aenean Eleifend</span><span class="blog-tag">Aliquam</span></div>
+        </div>
+        <div class="blog-body">
+          <h3>Integer Maecenas Eget Viverra</h3>
+          <div class="blog-author">
+            <img class="author-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Joanna">
+            <div class="author-info">
+              <span class="author-name">Joanna</span>
+              <span class="blog-date">June 29, 2018</span>
+              <span class="blog-shares">+M shares</span>
+            </div>
+          </div>
+          <p class="blog-excerpt">Aenean eleifend ante maecenas pulvinar nisl. Vestibulum in elit lorem at dolor praesent dones dorfum. Vel consequat justo enim.</p>
+          <a href="#" class="view-post">View Post &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Post 7 -->
+      <div class="blog-card">
+        <div class="blog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1501908734255-16579c18c25f?w=600&q=80" alt="Blog Post">
+          <div class="blog-tags"><span class="blog-tag">Aenean Eleifend</span><span class="blog-tag">Aliquam</span></div>
+        </div>
+        <div class="blog-body">
+          <h3>Integer Maecenas Eget Viverra</h3>
+          <div class="blog-author">
+            <img class="author-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Joanna">
+            <div class="author-info">
+              <span class="author-name">Joanna</span>
+              <span class="blog-date">June 29, 2018</span>
+              <span class="blog-shares">+M shares</span>
+            </div>
+          </div>
+          <p class="blog-excerpt">Aenean eleifend ante maecenas pulvinar nisl. Vestibulum in elit lorem at dolor praesent dones dorfum. Vel consequat justo enim.</p>
+          <a href="#" class="view-post">View Post &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Post 8 -->
+      <div class="blog-card">
+        <div class="blog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=600&q=80" alt="Blog Post">
+          <div class="blog-tags"><span class="blog-tag">Aenean Eleifend</span><span class="blog-tag">Aliquam</span></div>
+        </div>
+        <div class="blog-body">
+          <h3>Integer Maecenas Eget Viverra</h3>
+          <div class="blog-author">
+            <img class="author-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Joanna">
+            <div class="author-info">
+              <span class="author-name">Joanna</span>
+              <span class="blog-date">June 29, 2018</span>
+              <span class="blog-shares">+M shares</span>
+            </div>
+          </div>
+          <p class="blog-excerpt">Aenean eleifend ante maecenas pulvinar nisl. Vestibulum in elit lorem at dolor praesent dones dorfum. Vel consequat justo enim.</p>
+          <a href="#" class="view-post">View Post &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Post 9 -->
+      <div class="blog-card">
+        <div class="blog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=600&q=80" alt="Blog Post">
+          <div class="blog-tags"><span class="blog-tag">Aenean Eleifend</span><span class="blog-tag">Aliquam</span></div>
+        </div>
+        <div class="blog-body">
+          <h3>Integer Maecenas Eget Viverra</h3>
+          <div class="blog-author">
+            <img class="author-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Joanna">
+            <div class="author-info">
+              <span class="author-name">Joanna</span>
+              <span class="blog-date">June 29, 2018</span>
+              <span class="blog-shares">+M shares</span>
+            </div>
+          </div>
+          <p class="blog-excerpt">Aenean eleifend ante maecenas pulvinar nisl. Vestibulum in elit lorem at dolor praesent dones dorfum. Vel consequat justo enim.</p>
+          <a href="#" class="view-post">View Post &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="view-all-wrap">
+      <button class="btn-view-all purple-btn">View All &rarr;</button>
+    </div>
+  </section>
+
+  <!-- TOP DESTINATIONS -->
+  <section class="top-dest">
+    <div class="section-header">
+      <h2 class="section-title purple">Top Destination</h2>
+      <p class="section-subtitle">Discover The Most Exciting Cities Across The Globe, Handpicked To Offer You The Ultimate Travel Experiences.</p>
+    </div>
+    <div class="top-dest-grid">
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80" alt="France">
+        <div class="dest-card-overlay">
+          <div><h3>France</h3><span>&#128205; 10 Cities</span></div>
+        </div>
+        <div class="dest-arrow">&rarr;</div>
+      </div>
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&q=80" alt="Japan">
+        <div class="dest-card-overlay">
+          <div><h3>Japan</h3><span>&#128205; 10 Cities</span></div>
+        </div>
+        <div class="dest-arrow">&rarr;</div>
+      </div>
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=600&q=80" alt="Australia">
+        <div class="dest-card-overlay">
+          <div><h3>Australia</h3><span>&#128205; 10 Cities</span></div>
+        </div>
+        <div class="dest-arrow">&rarr;</div>
+      </div>
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=600&q=80" alt="USA">
+        <div class="dest-card-overlay">
+          <div><h3>USA</h3><span>&#128205; 10 Cities</span></div>
+        </div>
+        <div class="dest-arrow">&rarr;</div>
+      </div>
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=600&q=80" alt="Spain">
+        <div class="dest-card-overlay">
+          <div><h3>Spain</h3><span>&#128205; 10 Cities</span></div>
+        </div>
+        <div class="dest-arrow">&rarr;</div>
+      </div>
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Indonesia">
+        <div class="dest-card-overlay">
+          <div><h3>Indonesia</h3><span>&#128205; 10 Cities</span></div>
+        </div>
+        <div class="dest-arrow">&rarr;</div>
+      </div>
+    </div>
+    <div class="view-all-wrap">
+      <button class="btn-view-all">View All &rarr;</button>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter">
+    <div class="newsletter-inner">
+      <h2>Stay Updated With The Latest Travel News, Tips, And Exclusive Offers</h2>
+      <div class="newsletter-right">
+        <p>Sign Up For Newsletter Today!</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Email address">
+          <button>Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="nav-logo">TripBee</span>
+        <p>We Curate Exceptional Travel Experiences To Ensure Every Journey Is Unforgettable. Our Dedicated Team Provides Personalised Service, From Planning To Execution.</p>
+      </div>
+      <div class="footer-col">
+        <h4>About us</h4>
+        <a href="#">Company Overview</a>
+        <a href="#">Our Team</a>
+        <a href="#">Careers</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">FAQ</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Customer Service</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cancellation Policy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Follow us</h4>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2024 TripBee. All rights reserved.</div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+    });
+  </script>
+</body>
+</html>
