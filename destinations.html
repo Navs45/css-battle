@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destinations – TripBee</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .dest-hero-bg {
+      background-image: url('https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=1600&q=85');
+    }
+
+    /* ---- Filter Bar ---- */
+    .filter-bar {
+      padding: 36px 60px 0;
+      display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 10px 24px; border-radius: 40px; border: 1.5px solid var(--border);
+      background: var(--white); color: var(--text); font-size: 0.9rem; font-weight: 600;
+      cursor: pointer; font-family: var(--font-body); transition: background var(--transition), color var(--transition), border-color var(--transition);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--purple); color: var(--white); border-color: var(--purple);
+    }
+
+    /* ---- Top Destinations Grid ---- */
+    .destinations-section { padding: 60px 60px 80px; }
+    .dest-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    @media(max-width:1024px){ .dest-grid { grid-template-columns: 1fr 1fr; } }
+    @media(max-width:600px){ .dest-grid { grid-template-columns: 1fr; } }
+
+    .dest-card { position: relative; border-radius: var(--radius-lg); overflow: hidden; cursor: pointer; }
+    .dest-card img { width:100%; height: 220px; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .dest-card:hover img { transform: scale(1.06); }
+    .dest-card-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 16px 50px 16px 16px;
+      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+      color: var(--white);
+    }
+    .dest-card-overlay h3 { font-weight: 700; font-size: 1.05rem; margin-bottom: 4px; }
+    .dest-card-overlay span { font-size: 0.8rem; opacity: 0.85; display: flex; align-items: center; gap: 4px; }
+    .dest-arrow {
+      position: absolute; bottom: 14px; right: 14px;
+      width: 32px; height: 32px; border-radius: 50%; background: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--purple); font-size: 0.9rem; font-weight: 700;
+      transition: background var(--transition), color var(--transition);
+    }
+    .dest-card:hover .dest-arrow { background: var(--purple); color: var(--white); }
+
+    /* ---- Popular Tours ---- */
+    .popular-tours-dest { background: var(--off-white); }
+    .popular-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    @media(max-width:1024px){ .popular-grid { grid-template-columns: 1fr 1fr; } }
+    @media(max-width:600px){ .popular-grid { grid-template-columns: 1fr; } }
+
+    /* ---- Explore Banner ---- */
+    .explore-banner {
+      background: var(--purple);
+      background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1400&q=80');
+      background-blend-mode: multiply; background-size: cover; background-position: center;
+      text-align: center; padding: 80px 60px; color: var(--white);
+    }
+    .explore-banner h2 { font-family: var(--font-head); font-size: clamp(2rem,3.5vw,3rem); margin-bottom: 10px; }
+    .explore-banner p { opacity: .8; margin-bottom: 28px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">TripBee</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="destinations.html" class="active">Destinations</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html" class="btn-contact">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg dest-hero-bg"></div>
+    <div class="hero-content">
+      <h1>Explore Our Top<br>Destinations</h1>
+      <p>Discover The Most Exciting Cities Across The Globe, Handpicked To Offer You The Ultimate Travel Experiences.</p>
+      <div class="hero-socials">
+        <a href="#" title="Instagram">&#9632;</a>
+        <a href="#" title="Facebook">f</a>
+        <a href="#" title="LinkedIn">in</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <button class="filter-btn active">All</button>
+    <button class="filter-btn">Europe</button>
+    <button class="filter-btn">Asia</button>
+    <button class="filter-btn">Americas</button>
+    <button class="filter-btn">Africa</button>
+    <button class="filter-btn">Oceania</button>
+  </div>
+
+  <!-- TOP DESTINATIONS -->
+  <section class="destinations-section">
+    <div class="section-header">
+      <h2 class="section-title">Top Destination</h2>
+      <p class="section-subtitle">Discover The Most Exciting Cities Across The Globe, Handpicked To Offer You The Ultimate Travel Experiences.</p>
+    </div>
+    <div class="dest-grid">
+
+      <!-- France -->
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80" alt="France">
+        <div class="dest-card-overlay">
+          <h3>France</h3>
+          <span>&#127968; 10 Cities</span>
+        </div>
+        <div class="dest-arrow">&#8594;</div>
+      </div>
+
+      <!-- Japan -->
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&q=80" alt="Japan">
+        <div class="dest-card-overlay">
+          <h3>Japan</h3>
+          <span>&#127968; 10 Cities</span>
+        </div>
+        <div class="dest-arrow">&#8594;</div>
+      </div>
+
+      <!-- Australia -->
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=600&q=80" alt="Australia">
+        <div class="dest-card-overlay">
+          <h3>Australia</h3>
+          <span>&#127968; 10 Cities</span>
+        </div>
+        <div class="dest-arrow">&#8594;</div>
+      </div>
+
+      <!-- USA -->
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=600&q=80" alt="USA">
+        <div class="dest-card-overlay">
+          <h3>USA</h3>
+          <span>&#127968; 10 Cities</span>
+        </div>
+        <div class="dest-arrow">&#8594;</div>
+      </div>
+
+      <!-- Spain -->
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1543785734-4b6e564642f8?w=600&q=80" alt="Spain">
+        <div class="dest-card-overlay">
+          <h3>Spain</h3>
+          <span>&#127968; 10 Cities</span>
+        </div>
+        <div class="dest-arrow">&#8594;</div>
+      </div>
+
+      <!-- Indonesia -->
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Indonesia">
+        <div class="dest-card-overlay">
+          <h3>Indonesia</h3>
+          <span>&#127968; 10 Cities</span>
+        </div>
+        <div class="dest-arrow">&#8594;</div>
+      </div>
+
+      <!-- Italy -->
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1555990793-da11153b2473?w=600&q=80" alt="Italy">
+        <div class="dest-card-overlay">
+          <h3>Italy</h3>
+          <span>&#127968; 10 Cities</span>
+        </div>
+        <div class="dest-arrow">&#8594;</div>
+      </div>
+
+      <!-- Thailand -->
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=80" alt="Thailand">
+        <div class="dest-card-overlay">
+          <h3>Thailand</h3>
+          <span>&#127968; 10 Cities</span>
+        </div>
+        <div class="dest-arrow">&#8594;</div>
+      </div>
+
+      <!-- New Zealand -->
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?w=600&q=80" alt="New Zealand">
+        <div class="dest-card-overlay">
+          <h3>New Zealand</h3>
+          <span>&#127968; 10 Cities</span>
+        </div>
+        <div class="dest-arrow">&#8594;</div>
+      </div>
+
+    </div>
+
+    <!-- VIEW ALL -->
+    <div class="view-all-wrap" style="margin-top:40px;">
+      <button class="btn-view-all">View All &rarr;</button>
+    </div>
+  </section>
+
+  <!-- STATS BANNER -->
+  <div class="stats-banner">
+    <div class="stats-banner-inner">
+      <div class="stats-banner-item"><h3>10,000+</h3><p>Satisfied Travelers</p></div>
+      <div class="stats-banner-item"><h3>500+</h3><p>Destinations Covered</p></div>
+      <div class="stats-banner-item"><h3>150+</h3><p>Expert Guides</p></div>
+    </div>
+  </div>
+
+  <!-- POPULAR TOURS -->
+  <section class="popular-tours-dest">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title purple">Popular Tour Packages</h2>
+        <p class="section-subtitle">Handpicked Packages Designed To Give You The Best Experience At Every Destination.</p>
+      </div>
+      <div class="popular-grid">
+
+        <div class="tour-price-card">
+          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80" alt="Paris, France">
+          <div class="tour-price-body">
+            <h3>Paris, France</h3>
+            <div class="tour-meta">
+              <span>6 Days / 5 Nights</span>
+              <span>4 Activities</span>
+            </div>
+            <div class="tour-price-row">
+              <span class="price">$1,450</span>
+              <button class="btn-primary" style="padding:8px 18px;font-size:0.85rem;">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-price-card">
+          <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&q=80" alt="Tokyo, Japan">
+          <div class="tour-price-body">
+            <h3>Tokyo, Japan</h3>
+            <div class="tour-meta">
+              <span>8 Days / 7 Nights</span>
+              <span>6 Activities</span>
+            </div>
+            <div class="tour-price-row">
+              <span class="price">$1,890</span>
+              <button class="btn-primary" style="padding:8px 18px;font-size:0.85rem;">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-price-card">
+          <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Bali, Indonesia">
+          <div class="tour-price-body">
+            <h3>Bali, Indonesia</h3>
+            <div class="tour-meta">
+              <span>7 Days / 6 Nights</span>
+              <span>5 Activities</span>
+            </div>
+            <div class="tour-price-row">
+              <span class="price">$1,210</span>
+              <button class="btn-primary" style="padding:8px 18px;font-size:0.85rem;">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLORE BANNER -->
+  <div class="explore-banner">
+    <h2>Ready To Embark On Your Next<br>Adventure With Us?</h2>
+    <p>Contact Us Today To Start Planning Your Dream Trip With TripBee!</p>
+    <button class="btn-outline-white">Explore Now &rarr;</button>
+  </div>
+
+  <!-- FAQ + CONTACT FORM -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title purple">Got questions?</h2>
+        <p class="section-subtitle">We've Got Answers To Make Your Travel Easier And Ensure A Smooth Experience.</p>
+      </div>
+      <div class="faq-inner">
+        <div class="accordion">
+          <div class="accordion-item open">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              Can I customize my travel package?
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-body">Yes, You Can! We Offer Flexible Options To Tailor Your Trip To Your Preferences.</div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              Do you offer group discounts or family packages?
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-body">Yes, We Offer Special Group And Family Discounts. Contact Our Team For More Details.</div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              Can I pay in installments for my trip?
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-body">Yes, We Offer Easy EMI And Installment Plans. Contact Our Team For Details.</div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              What is your cancellation policy?
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-body">We Have A Flexible Cancellation Policy. Free Cancellation Up To 7 Days Before Departure.</div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              Can I reschedule my trip after booking?
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-body">Yes, Rescheduling Is Possible Subject To Availability. Contact Us At Least 48 Hours In Advance.</div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              Do you provide travel insurance?
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-body">Yes, We Offer Travel Insurance Packages. Ask Our Agent For Details During Booking.</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <h3>Do u have More Question?</h3>
+          <div class="form-group"><label>Name<span>*</span></label><input type="text" placeholder=""></div>
+          <div class="form-group"><label>Email<span>*</span></label><input type="email" placeholder=""></div>
+          <div class="form-group"><label>Phone Number<span>*</span></label><input type="tel" placeholder=""></div>
+          <div class="form-group"><label>How can we help you</label><textarea rows="4"></textarea></div>
+          <button class="btn-callback">request a call back &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter">
+    <div class="newsletter-inner">
+      <h2>Stay Updated With The Latest Travel News, Tips, And Exclusive Offers</h2>
+      <div class="newsletter-right">
+        <p>Sign Up For Newsletter Today!</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Email address">
+          <button>Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="nav-logo">TripBee</span>
+        <p>We Curate Exceptional Travel Experiences To Ensure Every Journey Is Unforgettable. Our Dedicated Team Provides Personalised Service, From Planning To Execution.</p>
+      </div>
+      <div class="footer-col">
+        <h4>About us</h4>
+        <a href="#">Company Overview</a>
+        <a href="#">Our Team</a>
+        <a href="#">Careers</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">FAQ</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Customer Service</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cancellation Policy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Follow us</h4>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2024 TripBee. All rights reserved.</div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    function toggleAccordion(header) {
+      const item = header.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    // Filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
