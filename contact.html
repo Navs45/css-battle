@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us – TripBee</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-hero-bg {
+      background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1600&q=85');
+    }
+
+    /* ---- Office Cards inside hero ---- */
+    .hero-offices {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      z-index: 3;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 0 60px 48px;
+      flex-wrap: wrap;
+    }
+    .office-card {
+      background: rgba(255,255,255,0.13);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      color: var(--white);
+      min-width: 220px;
+      flex: 1;
+      max-width: 280px;
+    }
+    .office-card h4 {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 14px;
+    }
+    .office-card .office-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.88);
+    }
+    .office-card .office-row svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ---- Contact Info Section ---- */
+    .contact-info-section {
+      padding: 80px 60px;
+    }
+    .contact-info-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    @media(max-width:768px){ .contact-info-inner { grid-template-columns: 1fr; } }
+
+    .contact-info-text p {
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 28px;
+      font-size: 0.95rem;
+    }
+    .contact-detail-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+    .contact-detail-row svg { color: var(--purple); flex-shrink: 0; }
+    .contact-info-text .extra-text {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-top: 24px;
+    }
+    .contact-info-img {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .contact-info-img img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ---- CTA Map Banner ---- */
+    .cta-map-banner {
+      background: var(--purple);
+      background-image: url("https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1400&q=80");
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: multiply;
+      padding: 80px 60px;
+      text-align: center;
+      color: var(--white);
+    }
+    .cta-map-banner h2 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .cta-map-banner p {
+      opacity: 0.82;
+      font-size: 0.98rem;
+      margin-bottom: 32px;
+    }
+
+    /* ---- Contact Form Section ---- */
+    .contact-form-section {
+      padding: 80px 60px;
+      background: var(--white);
+    }
+    .contact-form-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    @media(max-width:768px){ .contact-form-inner { grid-template-columns: 1fr; } }
+
+    .contact-form-img {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .contact-form-img img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">TripBee</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html" class="btn-contact active">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg contact-hero-bg"></div>
+    <div class="hero-content">
+      <h1>Get In Touch With<br>TripBee</h1>
+      <p>We Are Here To Assist You With All Your Travel Needs. Reach Out To Us Through Any Of Our Offices Or Via Our Support Channels.</p>
+    </div>
+
+    <!-- OFFICE CARDS overlaid at bottom of hero -->
+    <div class="hero-offices">
+
+      <div class="office-card">
+        <h4>New York Office</h4>
+        <div class="office-row">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>123 Fifth Avenue, New York, NY 10001, USA</span>
+        </div>
+        <div class="office-row">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <span>+1 (212) 777-1234</span>
+        </div>
+        <div class="office-row">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>Nyoffice@Tripbee.Com</span>
+        </div>
+      </div>
+
+      <div class="office-card">
+        <h4>India Office</h4>
+        <div class="office-row">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>123 Fifth Avenue, New York, NY 10001, USA</span>
+        </div>
+        <div class="office-row">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <span>+91 44444 22222</span>
+        </div>
+        <div class="office-row">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>Indoffice@Tripbee.Com</span>
+        </div>
+      </div>
+
+      <div class="office-card">
+        <h4>Tokyo Office</h4>
+        <div class="office-row">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>123 Fifth Avenue, New York, NY 10001, USA</span>
+        </div>
+        <div class="office-row">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <span>+81 3-1234-5678</span>
+        </div>
+        <div class="office-row">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>Tokoffice@Tripbee.Com</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT INFO + IMAGE -->
+  <section class="contact-info-section">
+    <div class="contact-info-inner">
+      <div class="contact-info-text">
+        <p>Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley Of Type And Scrambled It To Make A Type Specimen Book.</p>
+
+        <div class="contact-detail-row">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>123 Fifth Avenue, New York, NY 10001, USA</span>
+        </div>
+        <div class="contact-detail-row">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <span>+1 (212) 777-1234</span>
+        </div>
+        <div class="contact-detail-row">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>Nyoffice@Tripbee.Com</span>
+        </div>
+
+        <p class="extra-text">Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry.</p>
+      </div>
+
+      <div class="contact-info-img">
+        <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=800&q=80" alt="Bali Temple Sunset">
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-map-banner">
+    <h2>Ready To Embark On Your Next<br>Adventure With Us?</h2>
+    <p>Contact Us Today To Start Planning Your Dream Trip With TripBee!</p>
+    <button class="btn-outline-white">Contact Now &rarr;</button>
+  </div>
+
+  <!-- CONTACT FORM + IMAGE -->
+  <section class="contact-form-section">
+    <div class="contact-form-inner">
+      <div class="contact-form-img">
+        <img src="https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=800&q=80" alt="Mountain landscape">
+      </div>
+      <div class="contact-card">
+        <h3>Do u have More Question?</h3>
+        <div class="form-group"><label>Name<span>*</span></label><input type="text" placeholder=""></div>
+        <div class="form-group"><label>Email<span>*</span></label><input type="email" placeholder=""></div>
+        <div class="form-group"><label>Phone Number<span>*</span></label><input type="tel" placeholder=""></div>
+        <div class="form-group"><label>How can we help you</label><textarea rows="4"></textarea></div>
+        <button class="btn-callback">request a call back &rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter">
+    <div class="newsletter-inner">
+      <h2>Stay Updated With The Latest Travel News, Tips, And Exclusive Offers</h2>
+      <div class="newsletter-right">
+        <p>Sign Up For Newsletter Today!</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Email address">
+          <button>Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="nav-logo">TripBee</span>
+        <p>We Curate Exceptional Travel Experiences To Ensure Every Journey Is Unforgettable. Our Dedicated Team Provides Personalised Service, From Planning To Execution.</p>
+      </div>
+      <div class="footer-col">
+        <h4>About us</h4>
+        <a href="#">Company Overview</a>
+        <a href="#">Our Team</a>
+        <a href="#">Careers</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">FAQ</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Customer Service</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cancellation Policy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Follow us</h4>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2024 TripBee. All rights reserved.</div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+    });
+  </script>
+</body>
+</html>
